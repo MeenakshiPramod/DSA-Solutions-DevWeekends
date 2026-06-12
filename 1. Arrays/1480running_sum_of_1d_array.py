@@ -4,12 +4,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        ans = []
-        sum = 0
+        #Using prefix sum concept
+        for i in range(1,len(nums)):
+            nums[i]=nums[i]+nums[i-1]
 
-        for i in nums:
-            sum+=i
-            ans.append(sum)
-
-        return ans
-        
+        return nums
